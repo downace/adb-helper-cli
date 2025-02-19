@@ -14,11 +14,13 @@ import (
 )
 
 const serviceName = "_adb-tls-connect._tcp"
-
 const domain = "local."
 
+var adbBin = "adb"
+
 type Args = struct {
-	Timeout int `default:"5" help:"Search timeout in seconds"`
+	Timeout int    `default:"5" help:"Search timeout in seconds"`
+	Adb     string `default:"adb" help:"ADB executable path"`
 }
 
 type DeviceWithHost struct {
@@ -33,6 +35,8 @@ func (d DeviceWithHost) String() string {
 
 func main() {
 	args := parseArgs()
+
+	adbBin = args.Adb
 
 	var hosts []*DeviceWithHost
 
@@ -93,7 +97,7 @@ func selectHost(hosts []*DeviceWithHost) *DeviceWithHost {
 }
 
 func connectToHost(host *DeviceWithHost) {
-	cmd := exec.Command("adb", "connect", host.host)
+	cmd := exec.Command(adbBin, "connect", host.host)
 	fmt.Println("Connecting via", chalk.Blue.Color(cmd.Path), "with", chalk.Blue.Color(fmt.Sprint(cmd.Args)))
 	output, err := cmd.CombinedOutput()
 	if err != nil {

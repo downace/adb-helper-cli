@@ -12,3 +12,9 @@ With custom timeout (in seconds, default is 5)
 ```shell
 adb-helper-cli --timeout 15
 ```
+
+If ADB executable is not in your system Path, you can specify it using `--adb`:
+
+```shell
+adb-helper-cli --adb "C:\Android\platform-tools\adb.exe"
+```
