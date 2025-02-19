@@ -10,6 +10,7 @@ import (
 	"os"
 	"os/exec"
 	"os/signal"
+	"strings"
 	"time"
 )
 
@@ -101,10 +102,15 @@ func connectToHost(host *DeviceWithHost) {
 	fmt.Println("Connecting via", chalk.Blue.Color(cmd.Path), "with", chalk.Blue.Color(fmt.Sprint(cmd.Args)))
 	output, err := cmd.CombinedOutput()
 	if err != nil {
-		fmt.Println(chalk.Red.Color(string(output)))
+		fmt.Println(chalk.Red.Color(err.Error()))
 		return
 	}
-	fmt.Println(chalk.Green.Color(string(output)))
+	// `adb connect` returns exit code 0 irrespective of whether the connection is established or not.
+	if strings.Contains(string(output), "failed to connect") {
+		fmt.Println(chalk.Red.Color(string(output)))
+	} else {
+		fmt.Println(chalk.Green.Color(string(output)))
+	}
 }
 
 func discover(timeout time.Duration) []*DeviceWithHost {
