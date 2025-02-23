@@ -32,3 +32,5 @@ jobs:
           goos: ${{ matrix.goos }}
           goarch: ${{ matrix.goarch }}
           compress_assets: OFF
+          binary_name: "adb-helper"
+          ldflags: "-s -w"
