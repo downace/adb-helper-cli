@@ -5,7 +5,6 @@ import (
 	"downace/adb-helper-cli/internal/adb"
 	"downace/adb-helper-cli/internal/mdns"
 	"downace/adb-helper-cli/internal/ui"
-	"errors"
 	"fmt"
 	"github.com/libp2p/zeroconf/v2"
 	gonanoid "github.com/matoous/go-nanoid/v2"
@@ -117,7 +116,7 @@ func discoverPairingHost() (*mdns.Host, error) {
 	})
 
 	if pairingHost == nil {
-		return nil, errors.New("pairing failed")
+		return nil, fmt.Errorf("pairing failed")
 	}
 
 	return pairingHost, nil

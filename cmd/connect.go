@@ -19,7 +19,7 @@ var connectFirst bool
 var connectCmd = &cobra.Command{
 	Use:     "connect",
 	Short:   "Search devices and connect to them",
-	Run:     run,
+	Run:     connect,
 	GroupID: cmdGroupApp,
 }
 
@@ -30,7 +30,7 @@ func init() {
 	connectCmd.Flags().BoolVarP(&connectFirst, "use-first", "f", false, "When first device found, stop searching and connect to this device")
 }
 
-func run(_ *cobra.Command, _ []string) {
+func connect(_ *cobra.Command, _ []string) {
 	var hosts []*mdns.DeviceWithHost
 
 	hosts = discover(time.Second*time.Duration(timeout), connectFirst)
@@ -77,7 +77,11 @@ func discover(timeout time.Duration, stopOnFirst bool) []*mdns.DeviceWithHost {
 			}
 			fmt.Println(chalk.Green.Color(fmt.Sprintf("Device found: %v", device)))
 			if showTip {
-				fmt.Println(chalk.Magenta.Color("TIP: You can add --use-first to immediately connect to the first found device"))
+				fmt.Println(
+					chalk.Magenta.Color("TIP: You can add"),
+					chalk.Cyan.Color("--use-first"),
+					chalk.Magenta.Color("to immediately connect to the first found device"),
+				)
 				showTip = false
 			}
 			hosts = append(hosts, &device)
@@ -99,7 +103,7 @@ func connectToHost(host *mdns.DeviceWithHost) {
 	// `adb connect` returns exit code 0 irrespective of whether the connection is established or not.
 	if strings.Contains(output, "failed to connect") {
 		fmt.Println(chalk.Red.Color(output))
-		fmt.Println(chalk.Magenta.Color("TIP: Maybe device is not paired? Try using ") + chalk.Blue.Color("pair") + chalk.Yellow.Color(" command"))
+		fmt.Println(chalk.Magenta.Color("TIP: Maybe device is not paired? Try using ") + chalk.Blue.Color("pair") + chalk.Magenta.Color(" command"))
 	} else {
 		fmt.Println(chalk.Green.Color(output))
 	}

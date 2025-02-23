@@ -33,7 +33,14 @@ If ADB executable is not in your system Path, you can specify it using `--adb`:
 adb-helper --adb "C:\Android\platform-tools\adb.exe" connect
 ```
 
+Download ADB executable:
+
+```shell
+adb-helper download
+```
+
 ## Roadmap
 
 - [x] Simplify interface. Less interactivity, more arguments
-- [ ] Add option to download ADB executable
+- [x] Add option to download ADB executable
+- [ ] Controllable output (`--quiet` and `--verbose` flags), logging
