@@ -3,6 +3,7 @@ module github.com/downace/adb-helper-cli
 go 1.24.0
 
 retract (
+	v0.3.4 // Just for Go Doc comment update
 	v0.3.2 // Contains retractions only
 	[v0.0.0, v0.3.0] // Contains invalid module name
 )
