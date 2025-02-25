@@ -2,6 +2,11 @@ module github.com/downace/adb-helper-cli
 
 go 1.24.0
 
+retract (
+	v0.3.2 // Contains retractions only
+	[v0.0.0, v0.3.0] // Contains invalid module name
+)
+
 require (
 	github.com/evilsocket/islazy v1.11.0
 	github.com/imroc/req/v3 v3.49.1
