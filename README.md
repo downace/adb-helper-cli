@@ -15,6 +15,11 @@ Search devices and connect interactively:
 adb-helper connect
 ```
 
+<details><summary>Demo</summary>
+
+[![Connect demo GIF](demo_connect.gif)](https://asciinema.org/a/NzVvQTDaPy2X2MrSeE7rR684S)
+</details>
+
 Search devices and connect to the first found device:
 
 ```shell
@@ -27,11 +32,21 @@ Pair to device using QR-code:
 adb-helper pair --qr
 ```
 
+<details><summary>Demo</summary>
+
+[![Connect demo GIF](demo_pair_qr.gif)](https://asciinema.org/a/wsnxJjCtC9alC3qerjh7ZK5p1)
+</details>
+
 Pair to device using pairing code:
 
 ```shell
 adb-helper pair --code
 ```
+
+<details><summary>Demo</summary>
+
+[![Connect demo GIF](demo_pair_code.gif)](https://asciinema.org/a/2z9pxvLFdqlm5kISTVibDTQlG)
+</details>
 
 If ADB executable is not in your system Path, you can specify it using `--adb`:
 

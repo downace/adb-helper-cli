@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Line height is specified for better QR-code display
+agg demo_connect.cast demo_connect.gif --theme github-dark --line-height 1.2
+agg demo_pair_code.cast demo_pair_code.gif --theme github-dark --line-height 1.2
+agg demo_pair_qr.cast demo_pair_qr.gif --theme github-dark --line-height 1.2
