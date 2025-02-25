@@ -1,5 +1,11 @@
 # ADB Helper (CLI)
+
 CLI tool to simplify some ADB operations
+
+### Installation
+
+Download binary for your platform from [Releases](https://github.com/downace/adb-helper-cli/releases) page,
+or use `go install github.com/downace/adb-helper-cli`
 
 ### Usage
 

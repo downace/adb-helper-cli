@@ -2,10 +2,10 @@ package cmd
 
 import (
 	"context"
-	"downace/adb-helper-cli/internal/adb"
-	"downace/adb-helper-cli/internal/mdns"
-	"downace/adb-helper-cli/internal/ui"
 	"fmt"
+	"github.com/downace/adb-helper-cli/internal/adb"
+	"github.com/downace/adb-helper-cli/internal/mdns"
+	"github.com/downace/adb-helper-cli/internal/ui"
 	"github.com/libp2p/zeroconf/v2"
 	gonanoid "github.com/matoous/go-nanoid/v2"
 	"github.com/skip2/go-qrcode"

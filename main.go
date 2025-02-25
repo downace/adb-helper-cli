@@ -1,6 +1,6 @@
 package main
 
-import "downace/adb-helper-cli/cmd"
+import "github.com/downace/adb-helper-cli/cmd"
 
 func main() {
 	cmd.Execute()

@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"downace/adb-helper-cli/internal/adb"
 	"fmt"
+	"github.com/downace/adb-helper-cli/internal/adb"
 	"github.com/evilsocket/islazy/zip"
 	"github.com/imroc/req/v3"
 	"github.com/spf13/cobra"

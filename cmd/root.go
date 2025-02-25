@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"downace/adb-helper-cli/internal/adb"
+	"github.com/downace/adb-helper-cli/internal/adb"
 	"os"
 
 	"github.com/spf13/cobra"

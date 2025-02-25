@@ -1,8 +1,9 @@
-module downace/adb-helper-cli
+module github.com/downace/adb-helper-cli
 
 go 1.24.0
 
 require (
+	github.com/evilsocket/islazy v1.11.0
 	github.com/imroc/req/v3 v3.49.1
 	github.com/libp2p/zeroconf/v2 v2.2.0
 	github.com/matoous/go-nanoid/v2 v2.1.0
@@ -14,7 +15,6 @@ require (
 require (
 	github.com/andybalholm/brotli v1.1.1 // indirect
 	github.com/cloudflare/circl v1.6.0 // indirect
-	github.com/evilsocket/islazy v1.11.0 // indirect
 	github.com/go-task/slim-sprig/v3 v3.0.0 // indirect
 	github.com/google/pprof v0.0.0-20250208200701-d0013a598941 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
