@@ -86,7 +86,9 @@ func pairUsingPairingCode() error {
 		return err
 	}
 
-	code := ui.StringPrompt("Enter pairing code")
+	fmt.Println(chalk.Green.Color("Pairing with " + pairingHost.String()))
+
+	code := ui.StringPrompt("Enter pairing code: ")
 
 	var output string
 
