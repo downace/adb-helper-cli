@@ -1,6 +1,8 @@
 # ADB Helper (CLI)
 
-CLI tool to simplify some ADB operations
+CLI tool to aid with Android Wireless debugging (searching, pairing and connecting devices) without Android Studio.
+
+Also check out my desktop app with similar features: https://github.com/downace/adb-helper-desktop
 
 ### Installation
 
